@@ -1,0 +1,46 @@
+/**
+ * @Project:myspring
+ * @Package:com.zhuyuhua.myspring.aop 
+ * @FileName:BaseBeforeAdvice.java 
+ * @Date:2014-1-24 上午9:19:15 
+ * @Version V1.0.0
+ * Copyright(c)ShenZhen Expressway Engineering Consultants Co.,Ltd 
+ */
+package com.zhuyuhua.myspring.aop.advice;
+
+import java.lang.reflect.Method;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.aop.MethodBeforeAdvice;
+
+/**
+ * @ClassName:BaseBeforeAdvice
+ * @Desc:前置通知
+ * @Author:joe
+ * @Date:2014-1-24 上午9:19:15
+ * @Since:V 1.0
+ */
+public class BaseBeforeAdvice implements MethodBeforeAdvice
+{
+	private static final Logger LOGGER = LogManager
+			.getLogger(BaseBeforeAdvice.class);
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.springframework.aop.MethodBeforeAdvice#before(java.lang.reflect.Method
+	 * , java.lang.Object[], java.lang.Object)
+	 */
+	public void before(Method method, Object[] args, Object target)
+			throws Throwable {
+		System.out.println("===========进入beforeAdvice()============ \n");
+
+		// System.out.print("准备在" + target + "对象上用");
+		System.out.print(method + "方法进行对 '");
+		System.out.print(args[0] + "'进行删除！\n\n");
+
+		System.out.println("要进入切入点方法了 \n");
+	}
+}
