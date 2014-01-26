@@ -35,7 +35,7 @@ public class BaseAfterThrowsAdvice implements ThrowsAdvice
 	 */
 	public void afterThrowing(Method method, Object[] args, Object target,
 			Throwable throwable) {
-		System.out.println("删除出错啦");
+		System.out.println("======BaseAfterThrowsAdvice：删除出错啦");
 	}
 
 }

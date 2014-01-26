@@ -27,7 +27,8 @@ public class BaseAroundAdvice implements MethodInterceptor
 	 * @see org.aopalliance.intercept.MethodInterceptor#invoke(org.aopalliance.intercept.MethodInvocation) 
 	 */
 	public Object invoke(MethodInvocation invocation) throws Throwable {
-		System.out.println("===========进入around环绕方法！=========== \n");
+		System.out
+				.println("===========进入BaseAroundAdvice.around环绕方法！=========== \n");
 
 		// 调用目标方法之前执行的动作
 		System.out.println("调用方法之前: 执行！\n");

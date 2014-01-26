@@ -24,9 +24,9 @@ public class LoginControllerTest extends SpringTransactionalTestCase {
 	@Autowired
 	private LoginService loginService;
 
-	private static String xmlPath = "F:\\eclipse\\java_workspace\\myspring\\src\\test\\resources\\applicationContext-test.xml";
+	public static String xmlPath = "F:\\eclipse\\java_workspace\\myspring\\src\\test\\resources\\applicationContext-test.xml";
 
-	private static String classPath = "classpath*:application*.xml";
+	public static String classPath = "classpath*:application*.xml";
 
 	private ApplicationContext context;
 

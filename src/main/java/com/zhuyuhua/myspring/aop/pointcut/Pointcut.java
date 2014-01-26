@@ -12,12 +12,12 @@ import java.lang.reflect.Method;
 
 import org.springframework.aop.support.NameMatchMethodPointcut;
 
-/** 
- * @ClassName:Pointcut 
- * @Desc:TODO
+/**
+ * @ClassName:Pointcut
+ * @Desc:定义一个切点，指定对应方法匹配。来供切面来针对方法进行处理<br>
  * @Author:joe
- * @Date:2014-1-24 上午9:36:22 
- * @Since:V 1.0 
+ * @Date:2014-1-24 上午9:36:22
+ * @Since:V 1.0
  */
 public class Pointcut extends NameMatchMethodPointcut
 {
@@ -32,6 +32,7 @@ public class Pointcut extends NameMatchMethodPointcut
 	@SuppressWarnings("rawtypes")
 	@Override
 	public boolean matches(Method method, Class targetClass) {
+		System.out.println("======Pointcut.mathes======");
 		// 设置单个方法匹配
 		this.setMappedName("delete");
 		// 设置多个方法匹配

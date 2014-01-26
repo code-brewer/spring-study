@@ -33,6 +33,7 @@
  -->
 
 	<!-- ==============================利用spring自己的aop配置================================ -->
+	<!-- 业务类 -->
 	<bean id="baseBusiness" class="com.zhuyuhua.myspring.aop.business.BaseBusiness"/>
 	
 	<!-- 声明通知类 -->

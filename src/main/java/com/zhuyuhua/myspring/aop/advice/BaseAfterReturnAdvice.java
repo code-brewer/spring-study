@@ -27,7 +27,8 @@ public class BaseAfterReturnAdvice implements AfterReturningAdvice
 	 */
 	public void afterReturning(Object returnValue, Method method,
 			Object[] args, Object target) throws Throwable {
-		System.out.println("==========进入afterReturning()=========== \n");
+		System.out
+				.println("==========进入BaseAfterReturnAdvice.afterReturning()=========== \n");
 		System.out.println("切入点方法执行完了 \n");
 
 		System.out.print(args[0] + "在");
