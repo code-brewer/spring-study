@@ -86,3 +86,5 @@
 [2014.01.20 15:20:50.398]|[DEBUG]|[com.zhuyuhua.myspring.controller.LoginControllerTest.main(60)]:java.lang.Runtime@7912e076
 [2014.01.24 11:12:52.522]|[DEBUG]|[com.zhuyuhua.myspring.service.LoginService.showLogin(28)]:com.zhuyuhua.myspring.service.LoginService@7ef30fce
 [2014.01.24 11:12:52.539]|[DEBUG]|[com.zhuyuhua.myspring.service.UserService.callUser(31)]:==
+[2014.02.12 14:52:52.143]|[DEBUG]|[com.zhuyuhua.myspring.reflect.ReflectionTest.main(36)]:false
+[2014.02.12 14:52:52.155]|[DEBUG]|[com.zhuyuhua.myspring.reflect.ReflectionTest.main(37)]:true

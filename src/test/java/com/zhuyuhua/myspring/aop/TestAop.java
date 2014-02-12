@@ -26,7 +26,7 @@ public class TestAop
 {
 
 	@SuppressWarnings("resource")
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				LoginControllerTest.classPath);
@@ -34,6 +34,8 @@ public class TestAop
 		IBaseBusiness business = (IBaseBusiness) context
 				.getBean("businessProxy");
 		business.delete("猫");
+		// business.add("猫");
+		// business.modify("猫");
 
 		// AspectBusiness aspectBusiness = (AspectBusiness) context
 		// .getBean("aspectBusiness");

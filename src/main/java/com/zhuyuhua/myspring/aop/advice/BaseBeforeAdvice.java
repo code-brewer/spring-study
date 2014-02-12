@@ -35,13 +35,11 @@ public class BaseBeforeAdvice implements MethodBeforeAdvice
 	 */
 	public void before(Method method, Object[] args, Object target)
 			throws Throwable {
-		System.out
-				.println("===========进入BaseBeforeAdvice.beforeAdvice()============ \n");
+		System.out.println("========进入BaseBeforeAdvice.beforeAdvice()========");
 
 		// System.out.print("准备在" + target + "对象上用");
-		System.out.print(method + "方法进行对 '");
-		System.out.print(args[0] + "'进行删除！\n\n");
+		System.out.println(method + "方法进行对 '" + args[0] + "'进行删除！");
 
-		System.out.println("要进入切入点方法了 \n");
+		System.out.println("========退出BaseBeforeAdvice.beforeAdvice()========");
 	}
 }

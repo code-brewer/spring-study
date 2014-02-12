@@ -29,6 +29,9 @@ public class TestProxy
 			System.err.println(class1.getName() + ","
 					+ class1.getCanonicalName());
 		}
+		BookFacade facade1 = (BookFacade) new BookFacadeProxy()
+				.bind(new BookFacadeImpl());
+		facade1.addBook();
 
 	}
 }

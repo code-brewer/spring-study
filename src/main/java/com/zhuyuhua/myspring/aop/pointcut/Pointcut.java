@@ -32,7 +32,7 @@ public class Pointcut extends NameMatchMethodPointcut
 	@SuppressWarnings("rawtypes")
 	@Override
 	public boolean matches(Method method, Class targetClass) {
-		System.out.println("======Pointcut.mathes======");
+		// System.out.println("======Pointcut.mathes======");
 		// 设置单个方法匹配
 		this.setMappedName("delete");
 		// 设置多个方法匹配

@@ -37,10 +37,10 @@
 	<bean id="baseBusiness" class="com.zhuyuhua.myspring.aop.business.BaseBusiness"/>
 	
 	<!-- 声明通知类 -->
-	<bean id="baseBefore" class="com.zhuyuhua.myspring.aop.advice.BaseBeforeAdvice"/>
-	<bean id="baseAfterReturn" class="com.zhuyuhua.myspring.aop.advice.BaseAfterReturnAdvice"/>
-	<bean id="baseAfterThrows" class="com.zhuyuhua.myspring.aop.advice.BaseAfterThrowsAdvice"/>
-	<bean id="baseAround" class="com.zhuyuhua.myspring.aop.advice.BaseAroundAdvice"/>
+	<bean id="baseBeforeAdvice" class="com.zhuyuhua.myspring.aop.advice.BaseBeforeAdvice"/>
+	<bean id="baseAfterReturnAdvice" class="com.zhuyuhua.myspring.aop.advice.BaseAfterReturnAdvice"/>
+	<bean id="baseAfterThrowsAdvice" class="com.zhuyuhua.myspring.aop.advice.BaseAfterThrowsAdvice"/>
+	<bean id="baseAroundAdvice" class="com.zhuyuhua.myspring.aop.advice.BaseAroundAdvice"/>
 	
 	<!-- 指定切点匹配类 -->
 	<bean id="pointcut" class="com.zhuyuhua.myspring.aop.pointcut.Pointcut" />
@@ -48,7 +48,7 @@
 	<!-- 包装通知，指定切点 -->
 	<bean id="matchBeforeAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
 		<property name="pointcut" ref="pointcut" />
-		<property name="advice" ref="baseBefore" />
+		<property name="advice" ref="baseAroundAdvice" />
 	</bean>
 	
 	<!-- 使用ProxyFactoryBean 产生代理对象 -->
@@ -63,9 +63,10 @@
 		<!-- 代理对象所使用的拦截器 -->
 		<property name="interceptorNames">
 			<list>
-				<value>matchBeforeAdvisor</value>
-				<value>baseAfterReturn</value>
-				<value>baseAround</value>
+<!-- 				<value>matchBeforeAdvisor</value> -->
+				<value>baseAfterReturnAdvice</value>
+				<value>baseAroundAdvice</value>
+				<value>baseBeforeAdvice</value>
 			</list>
 		</property>
 	</bean>
@@ -73,32 +74,7 @@
 	
 	<!-- ******************************************************************************************** -->
 	
-	<!-- ==============================利用spring 利用aspectj来配置AOP================================ -->
-
-    <!-- 声明一个业务类 -->
-    <bean id="aspectBusiness" class="com.zhuyuhua.myspring.aop.business.aspect.AspectBusiness" />
-
-    <!-- 声明通知类 -->
-    <bean id="aspectAdvice" class="com.zhuyuhua.myspring.aop.advice.aspect.AspectAdvice" />
 	
-
-	 <aop:config>
-        <aop:aspect id="businessAspect" ref="aspectAdvice">
-            <!-- 配置指定切入的对象 -->
-            <aop:pointcut id="point_cut" expression="execution(* com.zhuyuhua.myspring.aop.business.aspect.*.*(..))" />
-            <!-- 只匹配add方法作为切入点
-            <aop:pointcut id="except_add" expression="execution(* aop.schema.*.add(..))" />
-             -->
-
-            <!-- 前置通知 -->
-            <aop:before method="doBefore" pointcut-ref="point_cut" />
-            <!-- 后置通知 returning指定返回参数 -->
-            <aop:after-returning method="doAfter"  pointcut-ref="point_cut" returning="result" />
-            <aop:around method="doAround" pointcut-ref="point_cut"/>
-            <aop:after-throwing method="doThrow" pointcut-ref="point_cut" throwing="e"/>
-            
-        </aop:aspect>
-    </aop:config>
 	
 	
 </beans>
