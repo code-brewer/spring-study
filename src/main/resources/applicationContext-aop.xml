@@ -65,8 +65,9 @@
 			<list>
 <!-- 				<value>matchBeforeAdvisor</value> -->
 				<value>baseAfterReturnAdvice</value>
-				<value>baseAroundAdvice</value>
 				<value>baseBeforeAdvice</value>
+				<value>baseAroundAdvice</value>
+<!-- 				<value>baseAfterThrowsAdvice</value> -->
 			</list>
 		</property>
 	</bean>

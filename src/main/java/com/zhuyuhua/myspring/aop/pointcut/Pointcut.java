@@ -36,12 +36,12 @@ public class Pointcut extends NameMatchMethodPointcut
 		// 设置单个方法匹配
 		this.setMappedName("delete");
 		// 设置多个方法匹配
-		String[] methods = { "delete", "modify" };
+		// String[] methods = { "delete", "modify" };
 
 		// 也可以用“ * ” 来做匹配符号
 		// this.setMappedName("get*");
 
-		this.setMappedNames(methods);
+		// this.setMappedNames(methods);
 
 		return super.matches(method, targetClass);
 	}

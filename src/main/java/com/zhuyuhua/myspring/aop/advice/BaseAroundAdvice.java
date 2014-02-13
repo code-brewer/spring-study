@@ -41,9 +41,10 @@ public class BaseAroundAdvice implements MethodInterceptor
 		// 执行完方法的返回值：调用proceed()方法，就会触发切入点方法执行
 		Object returnValue = invocation.proceed();
 
-
-		System.out.println("输出：" + args[0] + ";" + method + ";" + target + ";"
-				+ returnValue);
+		System.out.print("BaseAroundAdvice:" + args[0] + "在");
+		System.out.print(target + "对象上被");
+		System.out.print(method + "方法删除了");
+		System.out.print("只留下：" + returnValue + "\n");
 
 		System.out
 				.println("==========结束BaseAroundAdvice.around环绕方法！===========");

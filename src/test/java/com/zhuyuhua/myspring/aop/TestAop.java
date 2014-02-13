@@ -33,8 +33,8 @@ public class TestAop
 
 		IBaseBusiness business = (IBaseBusiness) context
 				.getBean("businessProxy");
-		business.delete("猫");
-		// business.add("猫");
+		// business.delete("猫");
+		business.add("猫");
 		// business.modify("猫");
 
 		// AspectBusiness aspectBusiness = (AspectBusiness) context

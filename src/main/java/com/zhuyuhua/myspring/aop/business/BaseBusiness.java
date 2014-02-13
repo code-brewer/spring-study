@@ -30,7 +30,7 @@ public class BaseBusiness implements IBaseBusiness
 
 	public String add(String obj) {
 		// System.out.println("=========这个方法不能被切。。。========");
-		System.out.println("======调用delete切入点：" + obj);
+		System.out.println("======调用add切入点：" + obj + ",返回值=" + obj + "：瞄～ 嘿嘿！");
 		return obj + "：瞄～ 嘿嘿！";
 	}
 

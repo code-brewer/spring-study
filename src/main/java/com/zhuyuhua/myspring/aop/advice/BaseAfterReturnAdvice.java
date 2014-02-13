@@ -29,10 +29,7 @@ public class BaseAfterReturnAdvice implements AfterReturningAdvice
 			Object[] args, Object target) throws Throwable {
 		System.out
 				.println("========进入BaseAfterReturnAdvice.afterReturning()=========");
-		System.out.print(args[0] + "在");
-		System.out.print(target + "对象上被");
-		System.out.print(method + "方法删除了");
-		System.out.print("只留下：" + returnValue + "\n");
+		System.out.println("BaseAfterReturnAdvice:返回值是=" + returnValue);
 		System.out
 				.println("========退出BaseAfterReturnAdvice.afterReturning()=========");
 	}

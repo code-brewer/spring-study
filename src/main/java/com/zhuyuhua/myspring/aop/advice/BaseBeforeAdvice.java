@@ -37,8 +37,8 @@ public class BaseBeforeAdvice implements MethodBeforeAdvice
 			throws Throwable {
 		System.out.println("========进入BaseBeforeAdvice.beforeAdvice()========");
 
-		// System.out.print("准备在" + target + "对象上用");
-		System.out.println(method + "方法进行对 '" + args[0] + "'进行删除！");
+		System.out.println("准备在" + target + "对象上用" + method + "方法进行对 '"
+				+ args[0] + "'进行删除！");
 
 		System.out.println("========退出BaseBeforeAdvice.beforeAdvice()========");
 	}
