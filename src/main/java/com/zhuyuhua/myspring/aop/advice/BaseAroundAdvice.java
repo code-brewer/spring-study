@@ -47,7 +47,7 @@ public class BaseAroundAdvice implements MethodInterceptor
 		System.out.print("只留下：" + returnValue + "\n");
 
 		System.out
-				.println("==========结束BaseAroundAdvice.around环绕方法！===========");
+.println("=======结束BaseAroundAdvice.around环绕方法！========");
 
 		return returnValue;
 	}

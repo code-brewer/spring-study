@@ -20,32 +20,24 @@ import java.lang.reflect.Proxy;
  * @Date:2014-1-21 下午3:06:43 
  * @Since:V 1.0 
  */
-public class TestProxy
+public class TestDynamicProxy
 {
 	public static void main(String[] args) {
-		BookFacadeImpl facade = new BookFacadeImpl();
-		Class<?>[] classz = facade.getClass().getInterfaces();
-		for (Class<?> class1 : classz) {
-			System.err.println(class1.getName() + ","
-					+ class1.getCanonicalName());
-		}
-		BookFacade facade1 = (BookFacade) new BookFacadeProxy()
+
+		IBookFacade facade = (IBookFacade) new BookFacadeProxy()
 				.bind(new BookFacadeImpl());
-		facade1.addBook();
+		facade.addBook();
 
 	}
 }
 
-interface BookFacade
+interface IBookFacade
 {
-	public int a = 100;
 	public void addBook();
 }
 
-class BookFacadeImpl implements BookFacade
+class BookFacadeImpl implements IBookFacade
 {
-	private int a;
-
 	public void addBook() {
 		System.out.println("增加图书");
 	}

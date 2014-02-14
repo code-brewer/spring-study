@@ -48,7 +48,7 @@
 	<!-- 包装通知，指定切点 -->
 	<bean id="matchBeforeAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
 		<property name="pointcut" ref="pointcut" />
-		<property name="advice" ref="baseAroundAdvice" />
+		<property name="advice" ref="baseBeforeAdvice" />
 	</bean>
 	
 	<!-- 使用ProxyFactoryBean 产生代理对象 -->
@@ -63,10 +63,10 @@
 		<!-- 代理对象所使用的拦截器 -->
 		<property name="interceptorNames">
 			<list>
-<!-- 				<value>matchBeforeAdvisor</value> -->
-				<value>baseAfterReturnAdvice</value>
-				<value>baseBeforeAdvice</value>
-				<value>baseAroundAdvice</value>
+				<value>matchBeforeAdvisor</value>
+<!-- 				<value>baseAfterReturnAdvice</value> -->
+<!-- 				<value>baseBeforeAdvice</value> -->
+<!-- 				<value>baseAroundAdvice</value> -->
 <!-- 				<value>baseAfterThrowsAdvice</value> -->
 			</list>
 		</property>
