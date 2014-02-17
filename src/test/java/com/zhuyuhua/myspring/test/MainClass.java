@@ -8,11 +8,7 @@
  */
 package com.zhuyuhua.myspring.test;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.zhuyuhua.myspring.aop.business.IBaseBusiness;
-import com.zhuyuhua.myspring.controller.LoginControllerTest;
+import org.springframework.web.context.WebApplicationContext;
 
 
 
@@ -28,16 +24,8 @@ public class MainClass
 {
 	public static void main(String[] args) {
 
-		ApplicationContext context = new ClassPathXmlApplicationContext(
-				LoginControllerTest.classPath);
-
-		IBaseBusiness business = (IBaseBusiness) context
-				.getBean("businessProxy");
-		business.delete("猫");
-
-		// AspectBusiness aspectBusiness = (AspectBusiness) context
-		// .getBean("aspectBusiness");
-		// aspectBusiness.delete("狗+++++");
+		System.out
+				.println(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE);
 	}
 }
 
