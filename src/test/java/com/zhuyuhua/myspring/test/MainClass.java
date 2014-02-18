@@ -8,6 +8,7 @@
  */
 package com.zhuyuhua.myspring.test;
 
+import org.springframework.util.Assert;
 import org.springframework.web.context.WebApplicationContext;
 
 
@@ -26,6 +27,8 @@ public class MainClass
 
 		System.out
 				.println(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE);
+
+		Assert.notNull(null, "URL path must not be null");
 	}
 }
 

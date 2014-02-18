@@ -24,6 +24,15 @@
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	
+	<mvc:interceptors>
+		<!-- 使用bean定义一个Interceptor，直接定义在mvc:interceptors根下面的Interceptor将拦截所有的请求 -->
+		<bean class="com.zhuyuhua.myspring.interceptor.SpringMVCWebRequestInterceptor"/>
+		<mvc:interceptor>
+			<mvc:mapping path="/*"/>
+			<bean class="com.zhuyuhua.myspring.interceptor.SpringMVCHandlerInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
 
 <!-- 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" -->
 <!-- 		p:messageConverters-ref="messageConverters"></bean> -->

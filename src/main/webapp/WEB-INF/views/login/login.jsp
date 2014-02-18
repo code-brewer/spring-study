@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-     <form action="login" methed="get">
+     <form action="login.action" methed="get">
             <input type="text" name="username">
             <input type="submit" value="SUBMIT">
         </form>
