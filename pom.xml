@@ -15,7 +15,7 @@
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-framework-bom</artifactId>
 				<version>4.0.0.RELEASE</version>
-<!-- 				<version>3.2.8.RELEASE</version> -->
+				<!-- <version>3.2.8.RELEASE</version> -->
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -82,12 +82,12 @@
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
-			<version>1.6.8</version>
+			<version>1.7.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
-			<version>1.6.8</version>
+			<version>1.7.4</version>
 		</dependency>
 
 		<!-- hibernate -->
@@ -122,12 +122,6 @@
 			<version>2.2</version>
 		</dependency>
 
-
-		<!-- <dependency> -->
-		<!-- <groupId>org.apache.commons</groupId> -->
-		<!-- <artifactId>commons-pool2</artifactId> -->
-		<!-- <version>2.1</version> -->
-		<!-- </dependency> -->
 		<dependency>
 			<groupId>commons-pool</groupId>
 			<artifactId>commons-pool</artifactId>
@@ -161,7 +155,6 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.25</version>
 		</dependency>
-
 	</dependencies>
 
 	<build>
