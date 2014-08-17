@@ -60,7 +60,7 @@ public class LoginControllerTest extends SpringTransactionalTestCase {
 		AspectBusiness aspectBusiness = (AspectBusiness) context
 				.getBean("aspectBusiness");
 		aspectBusiness.delete("狗+++++");
-
+		logger.debug("=======");
 	}
 
 }

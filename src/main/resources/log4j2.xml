@@ -18,27 +18,38 @@
 -->
 <configuration status="error">  
   <appenders>  
+  	
+  	<!-- 控制台 -->
     <Console name="Console" target="SYSTEM_OUT">  
       <ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY"/>  
       <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}]|[%-5level]|[%class{36}.%M(%L)]|[%msg%xEx]%n"/>  
     </Console>  
+    
+    <!-- 普通文件 -->
     <File name="log" fileName="target/test.log" append="false">  
       <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>  
     </File>
     
+    <!-- 循环日志 -->
     <RollingFile name="RollingFile" fileName="logs/app.log"  
                  filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">  
 <!--       <PatternLayout pattern="%d{yyyy.MM.dd 'at' HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n"/>   -->
 		<PatternLayout pattern="[%d{yyyy.MM.dd HH:mm:ss.SSS}]|[%-5level]|[%class{36}.%M(%L)]:%msg%xEx%n"/>
       <SizeBasedTriggeringPolicy size="10 MB" />  
-    </RollingFile>  
+    </RollingFile> 
+     
   </appenders>  
   
-  <loggers>  
-    <root level="debug">  
-      <appender-ref ref="RollingFile"/>  
-      <appender-ref ref="Console"/>  
-    </root>  
+  <loggers> 
+   	<Logger name="com.zhuyuhua.myspring.controller" level="warn">
+      	<AppenderRef ref="Console"/>
+    </Logger>
+  	
+<!--     <root level="debug">   -->
+<!--       <appender-ref ref="RollingFile"/>   -->
+<!--       <appender-ref ref="Console"/> -->
+<!--       <appender-ref ref="log" />  -->
+<!--     </root>   -->
   </loggers>  
   
 </configuration> 

@@ -32,7 +32,7 @@ public class UserDAOImpl implements UserDAO {
 
 		session.getTransaction().commit();
 		session.close();
-		testError();
+//		testError();
 	}
 
 	private void testError() {
